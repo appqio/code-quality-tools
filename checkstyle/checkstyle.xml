@@ -5,6 +5,17 @@
 
 <module name = "Checker">
     <module name="TreeWalker">
+        <!-- 작성자를 꼭 작성하게 합니다. -->
+        <module name="JavadocType">
+            <property name="authorFormat" value="\S"/>
+        </module>
+
+        <!-- No System.out -->
+        <module name="Regexp">
+            <property name="format" value="System\.out\.println" />
+            <property name="illegalPattern" value="true" />
+        </module>
+
         <module name="OperatorWrap">
             <property name="option" value="nl"/>
             <property name="tokens" value="METHOD_REF"/>
@@ -16,6 +27,19 @@
         </module>
 
         <module name="UnusedImports" />
+
+        <module name="EmptyLineSeparator">
+            <message key="empty.line.separator"
+                     value="코드 가독성을 높이기 위해서 필드 간, 메소드 간 줄바꿈을 해 주세요!" />
+        </module>
+
+        <!-- Checks for braces around if and else blocks -->
+        <module name="NeedBraces">
+            <property name="severity" value="error" />
+            <property name="tokens" value="LITERAL_IF, LITERAL_ELSE, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO" />
+        </module>
+
+        <module name="RightCurly"/>
 
     </module>
 </module>
