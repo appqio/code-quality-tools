@@ -6,6 +6,12 @@ name: Publish package to GitHub Packages
 on:
   release:
     types: [created]
+    paths:
+      - 'checkstyle/spring-data-jpa/**'  
+
+defaults:
+  run:
+    working-directory: checkstyle/spring-data-jpa
 
 jobs:
   build:
