@@ -56,10 +56,10 @@ public class ColumnAnnotationCheck extends AbstractCheck {
 
         if (isColumnAnnotation) {
             if (!hasName) {
-                log(annotation, "CATCH_MSG + variableName");
+                log(annotation, "@Column 에는 'name' 속성을 반드시 지정해야 합니다.");
             }
             if (!hasNullable) {
-                log(annotation, "CATCH_MSG + variableName");
+                log(annotation, "@Column 에는 'nullable' 속성을 반드시 지정해야 합니다.");
             }
         }
     }
