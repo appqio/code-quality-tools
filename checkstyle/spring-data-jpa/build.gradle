@@ -11,6 +11,20 @@ repositories {
     mavenCentral()
 }
 
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/appqio/code-quality-tools"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+
+
 dependencies {
     implementation 'com.puppycrawl.tools:checkstyle:8.39'
 
