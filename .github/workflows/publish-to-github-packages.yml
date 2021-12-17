@@ -6,7 +6,7 @@ name: Publish package to GitHub Packages
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
+      version:
         description: '배포 버전을 명시하세요.'     
         required: true
   release:
@@ -30,7 +30,8 @@ jobs:
           java-version: 1.8
       - name: Publish package
         run: |
-          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -d "v" -f2)
+          # NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -d "v" -f2)
+          NEW_VERSION=${{github.event.inputs.name}}
           echo "New version: ${NEW_VERSION}"
           echo "Github username: ${GITHUB_ACTOR}"
           ./gradlew -Pversion=${NEW_VERSION} publish
