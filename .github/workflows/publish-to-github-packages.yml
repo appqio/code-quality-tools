@@ -4,7 +4,7 @@
 name: Publish package to GitHub Packages
 
 on:
-  # workflow_dispatch:
+  workflow_dispatch:
   #  inputs:
   #    version:
   #      description: '배포 버전을 명시하세요.'     
