@@ -31,7 +31,7 @@ jobs:
       - name: Publish package
         run: |
           # NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -d "v" -f2)
-          NEW_VERSION=${{github.event.inputs.name}}
+          NEW_VERSION=${{github.event.inputs.version}}
           echo "New version: ${NEW_VERSION}"
           echo "Github username: ${GITHUB_ACTOR}"
           ./gradlew -Pversion=${NEW_VERSION} publish
