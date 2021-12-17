@@ -5,6 +5,10 @@ name: Publish package to GitHub Packages
 
 on:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: '배포 버전을 명시하세요.'     
+        required: true
   release:
     types: [created]
     paths:
